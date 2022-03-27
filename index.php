@@ -10,16 +10,7 @@
     <h2>Bicyclean+: Bicycle Services Reservation System</h2>
     <h3>Reservation Page</h3>
 
-    <form action="controller/process-reservation.php">
-        <!-- 
-            reservation_id
-            full_name - text
-            email_address - text
-            contact_no - number
-            service_type - dropdown
-            notes - textarea
-            time
-        -->
+    <form action="controller/process-reservation.php" method="post">
         <h3>Full Name</h3>
         <input type="text" placeholder="Enter your Full Name" required>
         <h3>Email Address</h3>
@@ -36,20 +27,20 @@
             <option value="5">Basic Suspension Service</option>
         </select>
         <br>
-        <h3>Notes</h3>
-        <textarea name="notes" id="" cols="30" rows="10" placeholder="Please mention your additional requests here."></textarea>
+       
+        <textarea name="notes" id="" cols="30" rows="10" placeholder="Please mention your additional requests here. Type N/A if none." ></textarea>
         <h3>Date</h3>
         <?php 
          $mindate = date("Y-m-d");
         ?>
          <input type="date" required id="res_date" name="date" min="<?=$mindate?>">
          <br>
-        <label for="timeslot">Select Time Slot (AM or PM only)</label>
-        <br>
+        <label for="timeslot"> <h3>Select Time Slot (AM or PM only)</h3></label>
         <select name="timeslot" id="timeslot">
             <option value="AM">AM</option>
-            <option value="PM">AM</option>
+            <option value="PM">PM</option>
         </select>
+        <input type="submit" name="submit">
     </form>
 </body>
 </html>
