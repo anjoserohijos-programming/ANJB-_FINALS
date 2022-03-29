@@ -23,8 +23,18 @@ class BicyCleanDatabase{
         }
     }
     
+    
     function closeConnection(){
         mysqli_close($this->conn);
+    }
+    function getServiceTypes(){
+        $sql = "SELECT * FROM service_types";
+        $result = mysqli_query($this->conn, $sql);
+        $row= array("service_id"=>"0", "service_name"=>"N/A", "service_description"=>"N/A");
+        if(mysqli_num_rows($result) > 0){
+            $row = mysqli_fetch_assoc($result);
+        }
+        return $row;
     }
 }
 ?>

@@ -99,13 +99,17 @@
         <input type="number" placeholder="Enter your phone number (+63)" required>
         <h3>Service Type</h3>
         <label for="service-type"></label>
-        <select style ="border-radius: 4px;"name="service-type" id="service-type">
-            <option value="1">Wheel Truing with Tensioning Application</option>
-            <option value="2">Wheel build with tension application</option>
-            <option value="3">Install Bike Rack</option>
-            <option value="4">Install Groupset</option>
-            <option value="5">Basic Suspension Service</option>
-        </select>
+        
+        <?php
+        include "controller/getServiceTypes.php";
+        echo "<select style ='border-radius: 4px;'name='service-type' id='service-type'>";
+        foreach($listServiceTypes as $serviceTypes){
+           echo "<option value=".$serviceTypes["service_id"].">".$serviceTypes["service_name"]."</option>";
+           print $serviceTypes["service_id"];
+           print $serviceTypes["service_name"];
+        }
+        echo "</select>";
+        ?>
         <br>
         <br>
        
