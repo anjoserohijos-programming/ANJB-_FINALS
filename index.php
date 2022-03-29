@@ -88,7 +88,7 @@
       float: none;
       }
 hr.solid {
-  border-top: 3px solid #bbb;
+    border-top: 4px solid #6c757d;
 }
 
 </style>
