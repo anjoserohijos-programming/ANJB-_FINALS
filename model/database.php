@@ -30,11 +30,13 @@ class BicyCleanDatabase{
     function getServiceTypes(){
         $sql = "SELECT * FROM service_types";
         $result = mysqli_query($this->conn, $sql);
-        $row= array("service_id"=>"0", "service_name"=>"N/A", "service_description"=>"N/A");
+        $row = array("service_id"=>"0", "service_name"=>"N/A", "service_description"=>"N/A");
+        $allRows = array();
         if(mysqli_num_rows($result) > 0){
-            $row = mysqli_fetch_assoc($result);
+            while($row = mysqli_fetch_assoc($result))
+            array_push($allRows, $row);
         }
-        return $row;
+        return $allRows;
     }
 }
 ?>
