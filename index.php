@@ -61,7 +61,7 @@
       font-size: 15px;
        }
 
-      button {
+    button       {
       background-color: beige;
       color: white;
       padding: 14px 0;
@@ -109,10 +109,8 @@ hr.solid {
 
 
 <body>
-   
-
     <form action="controller/process-reservation.php" method="post">
-    <h1 style="text-align: center;">Bicyclean+: Bicycle Services Reservation Form </h2>
+        <h1 style="text-align: center;">Bicyclean+: Bicycle Services Reservation Form </h2>
     
         <hr class ="solid">
 
@@ -150,7 +148,7 @@ hr.solid {
         </select>
         <br>
         <br>
-        <button><input type="submit" style = "background: none; border: none; color: dimgrey;"name="submit"></button>
+        <button id="submitBtn" type="submit" name="submit"> SUBMIT</button>
     </form>
 </body>
 </html>
