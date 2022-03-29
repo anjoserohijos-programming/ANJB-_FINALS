@@ -22,7 +22,20 @@
     background-size: cover;
 
       }
-
+    input{
+        outline: none;
+        border-radius: 10px;
+    }
+    option{
+        background-color: white;
+        color: #c47300;
+        transition: 4s;
+    }
+    option:hover{
+        background-color: #c47300;
+        color: white;
+        transition: .4s;
+    }
       form {
       
   padding: 2rem 3rem 4rem;
@@ -106,7 +119,7 @@ hr.solid {
         <h3>Full Name</h3>
         <input type="text" placeholder="Enter your Full Name" required>
         <h3>Email Address</h3>
-        <input type="text" placeholder="Enter your email address" required>
+        <input type="text" placeholder="Enter you email address" required>
         <h3>Contact No.</h3>
         <input type="number" placeholder="Enter your phone number (+63)" required>
         <h3>Service Type</h3>
@@ -128,7 +141,7 @@ hr.solid {
         <?php 
          $mindate = date("Y-m-d");
         ?>
-         <input type="date" style ="border-radius: 4px;     font-family: 'Roboto Serif';" required id="res_date" name="date" min="<?=$mindate?>">
+         <input type="date" style ="border-radius: 4px; font-family: 'Roboto Serif';" required id="res_date" name="date" min="<?=$mindate?>">
          <br>
         <label for="timeslot"> <h3>Select Time Slot (AM or PM only)</h3></label>
         <select name="timeslot" style ="border-radius: 4px;     font-family: 'Roboto Serif';"id="timeslot">
