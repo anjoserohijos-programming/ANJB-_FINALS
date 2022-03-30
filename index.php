@@ -9,7 +9,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto Serif' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Italiana' rel='stylesheet'>
     <link href='view/styles/reservation-page.css' rel='stylesheet'>
-    <title>BicyClean+ | Reservation Page |Bicycle Services Reservation System</title>
+    <title>BicyClean+ | Reservation Page | Bicycle Services Reservation System</title>
 </head>
 
 <style>
@@ -22,33 +22,32 @@
         <hr class ="solid">
 
         <h3>Full Name</h3>
-        <input type="text" placeholder="Enter your Full Name" required>
+        <input type="text" name="fullName"placeholder="Enter your Full Name" required>
         <h3>Email Address</h3>
-        <input type="text" placeholder="Enter you email address" required>
+        <input type="text"   name="email"placeholder="Enter you email address" required>
         <h3>Contact No.</h3>
-        <input type="number" placeholder="Enter your phone number (+63)" required>
+        <input type="number" name="contactNo" placeholder="Enter your phone number (+63)" required>
         <h3>Service Type</h3>
         <label for="service-type"></label>
-        
         <?php
         include "controller/getServiceTypes.php";
-        echo "<select style ='border-radius: 4px;'name='service-type' id='service-type'>";
+        echo "<select style ='border-radius: 4px; width: 100%; height: 50px; padding: 5px; outline: none;' name='serviceType' id='service-type'>";
         for( $i = 0;  $i < count($listServiceTypes); $i++ ){
-            echo "<option value=".$listServiceTypes[$i]["service_id"].">".$listServiceTypes[$i]["service_name"]."</option>";
+            echo "<option style='font-size: 17px;'value=".$listServiceTypes[$i]["service_id"].">".$listServiceTypes[$i]["service_name"]."</option>";
         }
         echo "</select>";
         ?>
         <br>
         <br>
-       
-        <textarea name="notes" id="" cols="30" rows="10" placeholder="Please mention your additional requests here. Type N/A if none." ></textarea>
+
+        <textarea name="notes" style = "width: 100%; height: 90px; outline: none; border-radius: 10px; padding: 5px;"placeholder="Please mention your additional requests here. Type N/A if none." ></textarea>
         <h3>Date</h3>
         <?php 
          $mindate = date("Y-m-d");
         ?>
-         <input type="date" style ="border-radius: 4px; font-family: 'Roboto Serif';" required id="res_date" name="date" min="<?=$mindate?>">
+         <input type="date" style ="border-radius: 4px; font-family: 'Roboto Serif';" required id="res_date" name="reservation_date" min="<?=$mindate?>">
          <br>
-        <label for="timeslot"> <h3>Select Time Slot (AM or PM only)</h3></label>
+        <label for="timeslot"><h3>Select Time Slot (AM or PM only)</h3></label>
         <select name="timeslot" style ="border-radius: 4px;     font-family: 'Roboto Serif';"id="timeslot">
             <option value="AM">AM</option>
             <option value="PM">PM</option>

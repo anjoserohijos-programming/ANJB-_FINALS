@@ -29,9 +29,7 @@ class ServiceTypes extends BicyCleanDatabase{
     }
 
     function addServiceType($serviceName, $serviceDescription){
-        ///INSERT INTO `service_types` (`service_id`, `service_name`, `service_description`) VALUES (NULL, 'Magic Spray Service', 'This service provide protection, maintains and lubricates the moving parts of your bike for a long time.');
         $sql = "INSERT INTO `service_types` (`service_id`, `service_name`, `service_description`) VALUES (NULL, '$serviceName', '$serviceDescription')";
-
         if($this->conn == true){
             if (mysqli_query($this->conn, $sql)) {
                 echo "New record created successfully";
