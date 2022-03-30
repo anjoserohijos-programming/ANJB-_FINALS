@@ -10,7 +10,6 @@ class Reservation extends BicyCleanDatabase{
                 return true;
             }
     }
-
     function closeConnection(){
         mysqli_close($this->conn);
     }

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BicyClean+ | Admin Dashboard</title>
 </head>
-<body>
-    <div class="Button Panel"></div>
-    <div class="embed-panel"></div>
+<body >
+    <div></div>
+    <div class="sidebar" style="">
+        <div class="today-reservations">
+            <h1>Today Reservations</h1>
+        </div>
+        <div class="next-reservations">
+            <h1>Next Day Reservations</h1>
+        </div>
+        <div class="archived-reservations">
+            <h1>Archived Reservations</h1>
+        </div>
+    </div>
 </body>
 </html>
