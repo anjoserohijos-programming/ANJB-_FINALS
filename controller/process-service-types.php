@@ -5,6 +5,7 @@ $listServiceTypes = null;
 
 if($database->startConnection()){
     $listServiceTypes = $database->retrieveServiceTypes();
+    
 }
 else{
     echo "Error.";

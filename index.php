@@ -30,7 +30,7 @@
         <h3>Service Type</h3>
         <label for="service-type"></label>
         <?php
-        include "controller/getServiceTypes.php";
+        include "controller/process-service-types.php";
         echo "<select style ='border-radius: 4px; width: 100%; height: 50px; padding: 5px; outline: none;' name='serviceType' id='service-type'>";
         for( $i = 0;  $i < count($listServiceTypes); $i++ ){
             echo "<option style='font-size: 17px;'value=".$listServiceTypes[$i]["service_id"].">".$listServiceTypes[$i]["service_name"]."</option>";

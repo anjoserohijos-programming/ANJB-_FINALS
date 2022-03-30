@@ -1,6 +1,6 @@
 <?php
-include "database.php";
 
+include "database.php";
 class ServiceTypes extends BicyCleanDatabase{
 
     function startConnection(){
