@@ -5,7 +5,6 @@ $listServiceTypes = null;
 
 if($database->startConnection()){
     $listServiceTypes = $database->retrieveServiceTypes();
-    $database->addServiceType("Linkages Repacking","Repacks some links.");
 }
 else{
     echo "Error.";
