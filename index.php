@@ -12,9 +12,6 @@
     <title>BicyClean+ | Reservation Page | Bicycle Services Reservation System</title>
 </head>
 
-<style>
-  
-</style>
 <body>
     <form action="controller/process-reservation.php" method="post">
         <h1 style="text-align: center;">Bicyclean+: Bicycle Services Reservation Form </h2>
