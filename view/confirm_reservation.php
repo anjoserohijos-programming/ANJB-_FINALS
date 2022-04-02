@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='../view/styles/reservation-page.css' rel='stylesheet'>
+  
     <title>Bicyclean+ | Thank You</title>
 </head>
 <style>
@@ -52,12 +52,8 @@
 </style>
 <body>
 <div class ="bg">
-	<?php
-		ob_start();
-		include('front-page.php');
-		ob_end_clean();
-	?>
-	<a href="front-page.php" class="float_but"> Back to Homepage </a>
+    
+	<a href="../index.php" class="float_but"> Back to Homepage </a>
 </div>
 </body>
 </html>

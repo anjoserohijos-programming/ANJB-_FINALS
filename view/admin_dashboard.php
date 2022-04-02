@@ -21,6 +21,10 @@
     margin: 0;
     padding: 0;
     height: 100%;
+    
+    background: url("https://images.unsplash.com/photo-1511884642898-4c92249e20b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
 	}
 	.sidebar{
     background-color: #FDF4E3;
@@ -33,8 +37,7 @@
     color: black;
     padding: 5px 0;
     margin: 10px 0;
-	border-radius: 8px;
-    cursor: grabbing;
+    cursor: pointer;
     width: 100%;
 	font-size: 20px;
     font-family: 'Roboto Serif';
@@ -60,6 +63,20 @@
     height: 60px;
     padding-right:0px;
     }
+    
+    .system-menu-item{
+        height: 7vh;
+        cursor:pointer;
+        margin: 0;
+        align-items: center;
+        text-align: center;
+        font-size: 20px;
+        transition: 2s;
+    }
+    .system-menu-item:hover{
+        background-color: orange;
+        transition: .5s;
+    }
 	</style>
 </head>
 <body >
@@ -67,24 +84,27 @@
         <div class="logopanel">
 			<img src="../view/styles/bc+.png" alt="wheel"> BICYCLEAN+ 
 		</div>
-        <div class="today-reservations">
-            <button id="profileBtn" name="profile"> My Profile </button>
-        </div>
-        <div class="today-reservations">
-           <button id="todayBtn" name="todayreserve"> Today Reservations </button>
-        </div>
-        <div class="next-reservations">
-            <button id="todayBtn" name="todayreserve"> Next Day Reservations </button>
-        </div>
-        <div class="archived-reservations">
-            <button id="todayBtn" name="todayreserve"> Archived Reservations </button>
-        </div>
-        <div class="archived-reservations">
-            <button id="todayBtn" name="todayreserve"> Sign Out </button>
-        </div>
+        <div class="logopanel">
+			<h4>System Menu</h4>
+		</div>
+        <div class="system-menu-item">My Profile</div>
+        <div class="system-menu-item" onclick="changePage()">Today Reservations</div>
+        <div class="system-menu-item">Next Day Reservations</div>
+        <div class="system-menu-item">Archived Reservations</div>
+        <div class="system-menu-item"> Activity Logs</div>
+        <button id="signOutBtn" name="signOut"> Sign Out </button>
     </div>
-    <div class="viewpanel">
-        asdf
+    <div class="viewpanel" style="margin-left: 5vh; margin-top: 4vh;">
+        <div class="page-title-head">
+           <h1>Today Reservations</h1>
+        </div>
+        <iframe id="tableFrame"src="today_reservations.php" style="width: 120vh; height: 70vh;"frameborder="1"></iframe>
     </div>
+
+    <script>
+        function changePage(){
+            document.getElementById("tableFrame").src = "next_reservations.php";
+        }
+    </script>
 </body>
 </html>

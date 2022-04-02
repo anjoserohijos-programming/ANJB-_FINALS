@@ -8,6 +8,8 @@ $database = new Administrator("localhost:3306", "root", "", "bike_service_reserv
             $test=  $database->login($username,$password);
             if($test == true){
                  header("Location: ../view/admin_dashboard.php");
+            } else{
+                header("Location: ../view/admin_login.php");
             }
         }
     }
