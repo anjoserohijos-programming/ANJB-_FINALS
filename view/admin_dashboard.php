@@ -87,23 +87,39 @@
         <div class="logopanel">
 			<h4>System Menu</h4>
 		</div>
-        <div class="system-menu-item">My Profile</div>
-        <div class="system-menu-item" onclick="changePage()">Today Reservations</div>
-        <div class="system-menu-item">Next Day Reservations</div>
-        <div class="system-menu-item">Archived Reservations</div>
-        <div class="system-menu-item"> Activity Logs</div>
+        <div class="system-menu-item" onclick="changePage(1)">My Profile</div>
+        <div class="system-menu-item" onclick="changePage(2)">Today Reservations</div>
+        <div class="system-menu-item" onclick="changePage(3)">Next Day Reservations</div>
+        <div class="system-menu-item" onclick="changePage(4)">Archived Reservations</div>
         <button id="signOutBtn" name="signOut"> Sign Out </button>
     </div>
     <div class="viewpanel" style="margin-left: 5vh; margin-top: 4vh;">
         <div class="page-title-head">
-           <h1>Today Reservations</h1>
+           <h1 id="page-title">Today Reservations</h1>
         </div>
         <iframe id="tableFrame"src="today_reservations.php" style="width: 120vh; height: 70vh;"frameborder="1"></iframe>
     </div>
 
     <script>
-        function changePage(){
-            document.getElementById("tableFrame").src = "next_reservations.php";
+        function changePage(index){
+            switch(index){
+                case 1:
+                    document.getElementById("page-title").innerHTML = "Admin Profile";
+                    document.getElementById("tableFrame").src = "admin-profile.php";
+                    break;
+                case 2:
+                    document.getElementById("page-title").innerHTML = "Today Reservations";
+                    document.getElementById("tableFrame").src = "today_reservations.php";
+                    break;
+                case 3:
+                    document.getElementById("page-title").innerHTML = "Next Reservations";
+                    document.getElementById("tableFrame").src = "next_reservations.php";
+                    break;
+                case 4: 
+                    document.getElementById("page-title").innerHTML = "Archived Reservations";
+                    document.getElementById("tableFrame").src = "archived_reservations.php";
+                    break;                    
+            }
         }
     </script>
 </body>
