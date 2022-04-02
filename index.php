@@ -281,7 +281,7 @@
 	     <div class="logo"><img src="view/styles/bc+.png" alt="wheel"> BICYCLEAN+ </div>
 	      <ul class="links">
 		        <li><a href="#home">Home</a></li>
-		        <li><a href="#aboutus">About Us</a></li>
+		    <li><a href="view/about_us.php">About Us</a></li>
 				<?php
 				ob_start();
 				include('../ReservationSystem/view/admin_signup.php');
@@ -316,7 +316,7 @@
     	 			<h4>Our Company</h4>
     	 			<ul>
     	 				<li><a href="#">Home</a></li>
-    	 				<li><a href="#">About Us</a></li>
+    	 				<li><a href="view/about_us.php">About Us</a></li>
     	 			</ul>
     	 		</div>
     	 		<div class="footer-col">
