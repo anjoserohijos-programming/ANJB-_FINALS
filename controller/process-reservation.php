@@ -7,10 +7,10 @@ $database = new Reservation("localhost:3306", "root", "", "bike_service_reservat
             $database->addReservation($fullName, $email, $contactNo, $serviceType, $notes, $reservation_date, $timeslot);
             header("Location: ../view/confirm_reservation.php");
         }else{
-        echo "bruh";
+            echo "Error: Dataset does not match to reservation paramters. Please try again.";
         }
     }
     else{
-        echo"NOOOO";
+        echo "Error: Database failed to start.";
     }
 ?>

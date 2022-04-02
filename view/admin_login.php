@@ -1,9 +1,3 @@
-<?php
-
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +9,9 @@
 <body>
     <h1>BicyClean+ Admin Login Page</h1>
     <form action="../controller/process-admin-login.php" method="post">
-        <input type="text" placeholder="Enter your Username">
-        <input type="password" placeholder="Enter your password">
-        <input type="button" name="submit" value="SUBMIT">
+        <input name="username"type="text" placeholder="Enter your Username">
+        <input name="password" type="password" placeholder="Enter your password">
+        <input type="submit" name="submit" value="SUBMIT">
     </form>
 </body>
 </html>

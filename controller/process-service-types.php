@@ -7,6 +7,6 @@ if($database->startConnection()){
     $listServiceTypes = $database->retrieveServiceTypes();
 }
 else{
-    echo "Error.";
+    echo "Error: Database failed to start.";
 }
 ?>

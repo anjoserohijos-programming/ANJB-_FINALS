@@ -23,8 +23,19 @@ class Administrator extends BicyCleanDatabase{
         mysqli_close($this->conn);
     }
 
-    function addNewAdministrator(){
+    function addNewAdministrator($username, $password, $full_name, $email_address, $contact_no, $home_address){
+        $sql = "INSERT INTO `administrator` (`admin_id`, `username`, `password`, `full_name`, `email_address`, `contact_no`, `home_address`, `date_registered`) VALUES (NULL, '$username', '$password', '$full_name', '$email_address', '$contact_no', '$home_address', CURRENT_DATE())";
 
+        if($this->conn == true){
+            if (mysqli_query($this->conn, $sql)) {
+                return true;
+              } else {
+                echo "Error: " . $sql . "<br>" . mysqli_error($this->conn);
+                return false;
+              }
+        } else {
+            return false;
+        }
     }
     function login($username, $password){
         $sql = "SELECT * FROM administrator where username='$username' AND password='$password'";
