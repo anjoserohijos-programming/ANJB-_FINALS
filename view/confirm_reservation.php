@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='view/styles/reservation-page.css' rel='stylesheet'>
+    <link href='../view/styles/reservation-page.css' rel='stylesheet'>
     <title>Bicyclean+ | Thank You</title>
 </head>
 <style>
@@ -27,9 +27,37 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.float_but{
+	position: absolute;
+	top: 400px;
+	left: 570px;
+	width:200px;
+	height:30px;
+    background-color:#27282B;
+	color:#FFF;
+	border-radius:10px;
+    border-bottom: 10px;
+    text-align: center;
+    padding: 10px 5px;;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size:20px;
+    margin-top: 10px;
+    }
+.float_but:hover{
+    background-color: #b0aeb3;
+    }
  
 </style>
 <body>
-<div class ="bg"></div>
+<div class ="bg">
+	<?php
+		ob_start();
+		include('front-page.php');
+		ob_end_clean();
+	?>
+	<a href="front-page.php" class="float_but"> Back to Homepage </a>
+</div>
 </body>
 </html>

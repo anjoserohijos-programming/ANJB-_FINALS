@@ -1,5 +1,4 @@
 <?php
-
 require_once "../model/Administrator.php";
 $database = new Administrator("localhost:3306", "root", "", "bike_service_reservation_system");
     if($database->startConnection()){

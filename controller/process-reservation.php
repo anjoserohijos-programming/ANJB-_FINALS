@@ -1,5 +1,5 @@
 <?php 
-require_once "../model/Reservations.php";
+require_once "../ReservationSystem/model/Reservations.php";
 $database = new Reservation("localhost:3306", "root", "", "bike_service_reservation_system");
     if($database->startConnection()){
         if(isset($_POST["submit"])){
