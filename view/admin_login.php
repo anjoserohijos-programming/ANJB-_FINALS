@@ -1,5 +1,9 @@
 <?php
-
+session_start();
+$_SESSION["isLoggedIn"] = false;
+if($_SESSION["isLoggedIn"] == true){
+    header("Location: ../admin_dashboard.php");
+}
 ?>
 
 <!DOCTYPE html>

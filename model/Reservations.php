@@ -13,13 +13,10 @@ class Reservation extends BicyCleanDatabase{
     function closeConnection(){
         mysqli_close($this->conn);
     }
-    function retrieveReservations(){
-        
-    }
-    function retrieveServiceTypes(){
-        $sql = "SELECT * FROM service_types";
+    function retrieveTodayReservations(){
+        $sql = "SELECT * FROM reservations where reservation_date like CURDATE()";
         $result = mysqli_query($this->conn, $sql);
-        $row = array("service_id"=>"0", "service_name"=>"N/A", "service_description"=>"N/A");
+        $row = array();
         $allRows = array();
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result))
@@ -27,6 +24,19 @@ class Reservation extends BicyCleanDatabase{
         }
         return $allRows;
     }
+
+    function retrieveNextReservations(){
+        $sql = "SELECT * FROM reservations where reservation_date > CURDATE()";
+        $result = mysqli_query($this->conn, $sql);
+        $row = array();
+        $allRows = array();
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result))
+            array_push($allRows, $row);
+        }
+        return $allRows;
+    }
+
     function addReservation($fullName, $email, $contactNo, $serviceType, $notes, $reservationDate, $timeslot){
         $availableSlot = "SELECT COUNT(*) as available_slots from reservations where time_slot LIKE '%$timeslot' and reservation_date LIKE '%$reservationDate'";
         $res_available_slot = mysqli_query($this->conn, $availableSlot);
@@ -47,6 +57,22 @@ class Reservation extends BicyCleanDatabase{
             }
         }else return false;
        
+    }
+
+    function addArchivedReservation($reservation_id, $full_name, $email_address, $contact_no, $service_type, $notes, $reservation_date, $time_slot, $admin_id){
+        $insertSql = "INSERT INTO `archived_reservations` (`reservation_id`, `full_name`, `email_address`, `contact_no`, `service_type`, `notes`, `reservation_date`, `time_slot`, `time`, `remarks`, `administered_by`) VALUES (NULL, '$full_name', '$email_address', '$contact_no', '$service_type', '$notes', '$reservation_date', '$time_slot', CURRENT_TIMESTAMP, 'ACCEPTED', '$admin_id')";
+        $deleteSql = "DELETE FROM `reservations` where reservation_id = $reservation_id";
+        if($this->conn == true){
+            if (mysqli_query($this->conn, $insertSql)) {
+                if(mysqli_query($this->conn, $deleteSql)){
+                    return true;
+                }
+              } else {
+                return false;
+              }
+        } else {
+            return false;
+        }
     }
 }
 ?>
