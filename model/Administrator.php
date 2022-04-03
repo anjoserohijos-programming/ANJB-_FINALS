@@ -110,7 +110,5 @@ class Administrator extends BicyCleanDatabase{
             return "0";
         }
     }
-
-    
 }
 ?>
