@@ -48,7 +48,6 @@
 .float_but:hover{
     background-color: #b0aeb3;
     }
- 
 </style>
 <body>
 <div class ="bg">

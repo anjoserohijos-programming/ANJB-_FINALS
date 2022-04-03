@@ -1,3 +1,9 @@
+<?php
+session_start();
+if($_SESSION["isLoggedIn"] == true){
+    header("Location: ../admin_dashboard.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,6 +79,10 @@
         font-size: 20px;
         transition: 2s;
     }
+    .system-menu-item h4{
+        margin:0;
+        padding-top: 20px;
+    }
     .system-menu-item:hover{
         background-color: orange;
         transition: .5s;
@@ -87,11 +97,11 @@
         <div class="logopanel">
 			<h4>System Menu</h4>
 		</div>
-        <div class="system-menu-item" onclick="changePage(1)">My Profile</div>
-        <div class="system-menu-item" onclick="changePage(2)">Today Reservations</div>
-        <div class="system-menu-item" onclick="changePage(3)">Next Day Reservations</div>
-        <div class="system-menu-item" onclick="changePage(4)">Archived Reservations</div>
-        <button id="signOutBtn" name="signOut"> Sign Out </button>
+        <div class="system-menu-item" onclick="changePage(1)"><h4>My Profile</h4></div>
+        <div class="system-menu-item" onclick="changePage(2)"><h4>Today Reservations</h4></div>
+        <div class="system-menu-item" onclick="changePage(3)"><h4>Next Day Reservations</h4></div>
+        <div class="system-menu-item" onclick="changePage(4)"><h4>Archived Reservations</h4></div>
+        <button id="signOutBtn" name="signOut" onclick="location.href = 'admin_login.php'"> Sign Out </button>
     </div>
     <div class="viewpanel" style="margin-left: 5vh; margin-top: 4vh;">
         <div class="page-title-head">
