@@ -8,5 +8,5 @@ $_SESSION["s_Email"] = null;
 $_SESSION["s_ContactNo"] = null;
 $_SESSION["s_HomeAddress"] = null;
 $_SESSION["s_DateRegistered"] = null;
-
+$_SESSION["isLoggedIn"] = null;
 ?>
