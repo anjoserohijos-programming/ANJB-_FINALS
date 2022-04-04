@@ -156,8 +156,8 @@
         }
         .float_but{
 	         position: absolute;
-	         top: 410px;
-	         left: 100px;
+	         top: 560px;
+	         left: 150px;
 	         width:200px;
 	         height:30px;
            background-color:#27282B;
