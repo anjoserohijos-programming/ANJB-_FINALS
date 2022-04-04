@@ -1,7 +1,7 @@
 <?php
 session_start();
 if($_SESSION["isLoggedIn"] == false){
-    header("Location: admin_login.php");
+    header("Location: ../view/admin_login.php");
 }
 ?>
 <!DOCTYPE html>
